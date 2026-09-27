@@ -1,54 +1,84 @@
-# E-Commerce Sales Analytics Dashboard
+# E-Commerce Sales Analytics
 
-## 📊 Project Overview
+An end-to-end e-commerce data analytics project using Python, SQL Server, and Power BI to analyze sales performance, profitability, customer orders, product categories, and business trends.
 
-This project is an end-to-end E-Commerce Sales Analytics solution developed using SQL Server, Python and Power BI.
+## Dashboard Preview
 
-The objective of the project is to analyze e-commerce sales data and create an interactive dashboard that provides insights into sales performance, profit, orders, product categories, states, payment methods and customers.
+![E-Commerce Sales Dashboard](EcommercePowerBI/EcommercePowerBI/Screenshotsdashboard.png.png)
 
-## 🎯 Objectives
+---
 
-- Analyze overall sales performance
-- Track total sales and profit
-- Analyze monthly sales trends
-- Identify sales performance by category
-- Analyze sales by state
-- Understand customer payment preferences
-- Identify top customers based on sales
-- Provide an interactive Power BI dashboard
+## Project Overview
 
-## 🛠️ Technologies Used
+This project analyzes an e-commerce sales dataset to understand overall sales performance and identify important business trends.
 
-- SQL Server
-- Microsoft Power BI
-- Python
-- Pandas
-- Matplotlib
-- Git & GitHub
+The project combines:
 
-## 🗄️ Database Structure
+- Python for data analysis and exploration
+- SQL Server for data storage and querying
+- Power BI for interactive dashboard development
 
-The project uses SQL Server with two main tables:
+The main objective is to transform raw e-commerce data into meaningful business insights through SQL analysis and interactive Power BI visualizations.
 
-### Orders
-- Order_ID
-- Order_Date
-- CustomerName
-- State
-- City
+---
 
-### Details
-- Order_ID
-- Amount
-- Profit
-- Quantity
-- Category
-- Sub_Category
-- PaymentMode
+## Project Functionalities
 
-The tables are connected using `Order_ID`.
+### 1. Data Analysis
 
-## 📈 Key Metrics
+The dataset was analyzed to understand:
+
+- Sales performance
+- Profit performance
+- Order volume
+- Product quantity
+- Customer activity
+- Category performance
+- Sub-category performance
+- Regional sales trends
+- Payment mode analysis
+
+### 2. SQL Analysis
+
+SQL Server was used to store the e-commerce data and perform business analysis.
+
+Key metrics include:
+
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Quantity
+- Customer analysis
+- Category-wise sales
+- Sub-category-wise sales
+- Regional performance
+- Payment mode analysis
+
+### 3. Power BI Dashboard
+
+An interactive Power BI dashboard was created to visualize the sales data.
+
+The dashboard includes:
+
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Quantity
+- Sales by Category
+- Sales by Sub-Category
+- Sales by State
+- Sales by Payment Mode
+- Profit analysis
+- Order details
+- Interactive filters
+
+### 4. Interactive Filtering
+
+Users can explore the dashboard using filters and slicers to analyze different segments of the e-commerce data.
+
+---
+
+## Key Business Metrics
 
 | Metric | Value |
 |---|---:|
@@ -56,43 +86,31 @@ The tables are connected using `Order_ID`.
 | Total Profit | 36,963 |
 | Total Orders | 500 |
 | Total Quantity | 5,615 |
+| Customer Names | 336 |
 
-## 📊 Dashboard Features
+> Customer Names represents the number of distinct customer names present in the dataset.
 
-The Power BI dashboard contains:
+---
 
-- Total Sales KPI
-- Total Profit KPI
-- Total Orders KPI
-- Total Quantity KPI
-- Monthly Sales Trend
-- Sales by Category
-- Sales by State
-- Sales by Payment Mode
-- Top 5 Customers by Sales
-- Recent Orders
-- State filter
-- City filter
-- Category filter
-- Sub Category filter
-- Payment Mode filter
-- Order Date filter
+## Technologies Used
 
-## 🖥️ Dashboard
+### Programming & Analysis
+- Python
+- Pandas
+- Matplotlib
 
-![E-Commerce Sales Dashboard](Screenshots/dashboard.png)
+### Database
+- Microsoft SQL Server
+- SQL
 
-## 🔄 Project Workflow
+### Visualization
+- Microsoft Power BI
 
-```text
-Raw Dataset
-     ↓
-SQL Server
-     ↓
-SQL Analysis
-     ↓
-Python Analysis
-     ↓
-Power BI
-     ↓
-Interactive Dashboard
+### Tools
+- VS Code
+- SQL Server Management Studio
+- GitHub
+- GitHub Desktop
+
+---
+
