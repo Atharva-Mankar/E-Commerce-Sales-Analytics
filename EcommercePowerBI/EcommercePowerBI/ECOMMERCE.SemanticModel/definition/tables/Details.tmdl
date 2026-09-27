@@ -1,0 +1,85 @@
+table Details
+	lineageTag: e3462224-c618-47f8-a1bc-3405c05a9073
+
+	column Order_ID
+		dataType: string
+		lineageTag: 4026bdab-2b7b-48dc-8dc7-0f5760a5319a
+		summarizeBy: none
+		sourceColumn: Order_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d838baa-4a0b-4a9f-90b8-7b2c1fc7b5fe
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit
+		dataType: int64
+		formatString: 0
+		lineageTag: ef647fc7-3095-4842-b2bc-87a80ad1fef5
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: fd43c4ba-9b15-479f-a054-a0b47f568d42
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: d3aa1139-b43e-47df-a60a-7a2c23454b3d
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub_Category
+		dataType: string
+		lineageTag: 5cc1355d-75a3-437d-8e09-dffd20d389b4
+		summarizeBy: none
+		sourceColumn: Sub_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentMode
+		dataType: string
+		lineageTag: 3b6f3b6d-b8fd-4730-a8cc-ea2116ba0b47
+		summarizeBy: none
+		sourceColumn: PaymentMode
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Sales' = SUM(Details[Amount])
+		formatString: #,##0
+		lineageTag: 43872d2a-c2df-4888-8b77-9a10e137a6e6
+
+	measure 'Total Profit' = SUM(Details[Profit])
+		formatString: #,##0
+		lineageTag: d3dd813b-ea2c-45d9-99c7-d68fd8d05e2f
+
+	measure 'Total Quantity' = SUM(Details[Quantity])
+		formatString: #,##0
+		lineageTag: 80549378-5a15-4bd7-89ac-f7cc244a7668
+
+	partition Details = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-VG6CRR4\MSSQL", "EcommerceAnalytics"),
+				    dbo_Details = Source{[Schema="dbo",Item="Details"]}[Data]
+				in
+				    dbo_Details
+
+	annotation PBI_ResultType = Table
+

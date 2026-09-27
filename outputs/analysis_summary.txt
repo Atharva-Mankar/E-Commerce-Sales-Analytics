@@ -1,0 +1,80 @@
+Orders: (500, 5) | Details: (1500, 7)
+Missing values: 0
+Duplicate rows: 0
+
+KPIs:
+ Total Sales                         437771.00
+Total Profit                         36963.00
+Total Orders                           500.00
+Total Customers (distinct names)       336.00
+Total Quantity                        5615.00
+Average Order Value                    875.54
+Profit Margin (%)                        8.44
+
+monthly_sales:
+   Month  Amount  Profit
+2018-01   61632    9684
+2018-02   38962    8465
+2018-03   60694    7793
+2018-04   34330    4192
+2018-05   29093   -3730
+2018-06   23658     420
+2018-07   12966   -2138
+2018-08   31492    2068
+2018-09   27283   -1399
+2018-10   31613    2959
+
+category_sales:
+    Category  Amount  Profit
+Electronics  166267   13162
+   Clothing  144323   13325
+  Furniture  127181   10476
+
+state_sales:
+          State  Amount  Profit
+   Maharashtra  102498    6963
+Madhya Pradesh   87463    7382
+ Uttar Pradesh   38362    3358
+         Delhi   22957    1958
+     Rajasthan   22334    -323
+       Gujarat   21371    3001
+        Punjab   16786    1571
+   West Bengal   14328    2074
+       Kerala    13871    2435
+         Bihar   13417    1787
+
+top_customers:
+ CustomerName  Amount
+   Harivansh    9902
+      Madhav    9365
+ Madan Mohan    7766
+       Shiva    6339
+    Vishakha    6120
+      Vrinda    5820
+      Lalita    5809
+    Priyanka    5762
+      Shruti    5750
+    Abhijeet    5691
+
+payment_modes:
+ PaymentMode  Amount
+        COD  155181
+Credit Card   86932
+        EMI   77881
+        UPI   68641
+ Debit Card   49136
+
+subcategory_sales:
+     Sub-Category  Amount  Profit
+        Printers   59252    8606
+           Saree   59094    4057
+       Bookcases   56861    6516
+          Phones   46119    1847
+Electronic Games   39168    -644
+          Chairs   34222    1627
+        Trousers   30039    2847
+          Tables   22614    3139
+     Accessories   21728    3353
+           Stole   18546    2431
+
+Saved cleaned data, reports and charts to outputs/.

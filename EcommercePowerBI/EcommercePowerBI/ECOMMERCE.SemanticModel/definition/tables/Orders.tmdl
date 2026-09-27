@@ -1,0 +1,84 @@
+table Orders
+	lineageTag: 78ad749d-cf52-44f5-a464-0c75e21d2681
+
+	column Order_ID
+		dataType: string
+		lineageTag: 2bf0796b-34d6-480d-9437-35103aad4ab4
+		summarizeBy: none
+		sourceColumn: Order_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 67a1167d-f851-4b07-90d7-35bcd22d8e85
+		summarizeBy: none
+		sourceColumn: Order_Date
+
+		variation Variation
+			isDefault
+			relationship: 2b081ccb-b405-45fa-8f61-34365db1409e
+			defaultHierarchy: LocalDateTable_6f023551-5435-4e24-8352-67b998c7da1e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CustomerName
+		dataType: string
+		lineageTag: 5ab62c54-e095-4fed-9527-62e0ed869c3c
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: bf9eb49b-b016-4c31-916b-a7b57c4b4351
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: e4cb6681-c927-4be8-9105-9548cfc9f5d6
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Orders' = DISTINCTCOUNT(Orders[Order_ID])
+		formatString: #,##0
+		lineageTag: bbe895f0-3842-4bde-ac74-8d87e4188a17
+
+	column Order_MonthNum = MONTH([Order_Date])
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ccdd1a94-a136-4ae7-b553-86468b35d3ba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column Order_Month = FORMAT([Order_Date], "MMM")
+		dataType: string
+		isHidden
+		lineageTag: 2779d271-486c-4bfd-b6b8-effc5bc5b66c
+		summarizeBy: none
+		sortByColumn: Order_MonthNum
+
+		annotation SummarizationSetBy = User
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-VG6CRR4\MSSQL", "EcommerceAnalytics"),
+				    dbo_Orders = Source{[Schema="dbo",Item="Orders"]}[Data]
+				in
+				    dbo_Orders
+
+	annotation PBI_ResultType = Table
+
